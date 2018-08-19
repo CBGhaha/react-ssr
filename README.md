@@ -1,12 +1,12 @@
 # react-ssr
 this is a demo of react-ssr
 
-#development
+# development
 npm run dev
 listen localhost:3001
 
-#production
+# production
 npm run build
 
-#run ssr
+# run ssr
 npm run ssr
