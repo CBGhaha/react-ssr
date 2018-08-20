@@ -11,7 +11,7 @@ export default class Home extends Component{
     super(props);
   }
   componentDidMount(){
-    this.props.ajaxAction('homeAjax',{level:'country'});
+    // this.props.ajaxAction('homeAjax',{level:'country'});
   }
   render(){
     return(

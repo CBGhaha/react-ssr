@@ -76,7 +76,7 @@ const config={
   plugins:[
     //自动生成html模板
     new HtmlWebpackPlugin({
-        filename: 'app.html',//生成的html模板的名称
+        filename: 'index.html',//生成的html模板的名称
         template: path.join(__dirname, 'src/index.html')//生成的html的模板的
     }),
   ],

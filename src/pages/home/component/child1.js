@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import context from 'components/context';
+import context from '../../../components/context';
 const {Consumer}=context;
 
 export default class Child1 extends Component{

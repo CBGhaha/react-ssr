@@ -5,6 +5,7 @@ const common=require('./webpack.common.js')
 const merge = require('webpack-merge')
 const config={
   //配置模块的读取和解析规则
+  mode:'production',
   module:{
     rules:[
       //css/less文件打包 并单独编译成文件 不插入在bundle中
@@ -51,9 +52,9 @@ const config={
     //从webpack4起 指定环境为生产环境会自动调用UglifyJSPlugin()；
     // new UglifyJSPlugin(),
     //指定环境为生产环境 一些 library 可能针对具体用户的环境进行代码优化，从而删除或添加一些重要代码
-    new webpack.DefinePlugin({
-       'process.env.NODE_ENV': JSON.stringify('production')
-     }),
+    // new webpack.DefinePlugin({
+    //    'process.env.NODE_ENV': JSON.stringify('production')
+    //  }),
      new MiniCssExtractPlugin({
        filename: "[name].[chunkhash:8].css",
        chunkFilename: "[id].css"
