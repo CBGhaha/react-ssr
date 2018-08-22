@@ -13,10 +13,7 @@ babelConfig.plugins=babelConfig.plugins.concat(['syntax-dynamic-import',"dynamic
 console.log(babelConfig);
 require('babel-register')(babelConfig);
 const  appHtml =require('./appHtml.js').default;
-app.use(express.static('../../dist'));
-app.use((req,res,next)=>{
-
-    res.end(appHtml(req.path))
-})
+app.use(express.static(path.resolve(__dirname,'../../dist')));
+app.use(appHtml)
 
 app.listen('8080')

@@ -2,7 +2,7 @@ const path=require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config={
   entry:{
-    main:path.resolve(__dirname,'src'),//项目的主入口
+    main:path.resolve(__dirname,'src/client'),//项目的主入口
     //代码分离---提取公共库
     // vendor:['react','react-router-dom','react-dom',],
   },
