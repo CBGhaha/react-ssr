@@ -25,7 +25,7 @@ export default class Home extends Component{
     }
   }
 
-  componentDidMount(){
+  componentWillMount(){
 
     (!this.props.homeAjax.data)&&this.props.ajaxAction('homeAjax',{level:'country'},(res)=>{console.log(res)});
     this.setState({
