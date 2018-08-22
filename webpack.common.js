@@ -1,5 +1,4 @@
 const path=require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config={
   entry:{
     main:path.resolve(__dirname,'src/client'),//项目的主入口
@@ -74,11 +73,7 @@ const config={
   },
   //插件 运用插件可以实现很多重要功能 代码压缩 自动生成html 热加载 提取公共库 等等
   plugins:[
-    //自动生成html模板
-    new HtmlWebpackPlugin({
-        filename: 'index.html',//生成的html模板的名称
-        template: path.join(__dirname, 'src/index.html')//生成的html的模板的
-    }),
+
   ],
 
   //项目的类型 默认是web项目

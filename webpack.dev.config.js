@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 const common=require('./webpack.common.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
+const path=require('path');
 const config={
   mode:'development',
   devServer:{
@@ -59,7 +61,10 @@ const config={
     },
     plugins:[
       new webpack.HotModuleReplacementPlugin(),//HMR 模块热替换
-
+      new HtmlWebpackPlugin({
+          filename: 'index.html',//生成的html模板的名称
+          template: path.join(__dirname, 'src/index.html')//生成的html的模板的
+      }),
     ],
 }
 module.exports=merge(common,config);

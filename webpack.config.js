@@ -1,8 +1,10 @@
 var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const common=require('./webpack.common.js')
 const merge = require('webpack-merge')
+const path=require('path');
 const config={
   //配置模块的读取和解析规则
   mode:'production',
@@ -55,6 +57,11 @@ const config={
     // new webpack.DefinePlugin({
     //    'process.env.NODE_ENV': JSON.stringify('production')
     //  }),
+    //自动生成html模板
+    new HtmlWebpackPlugin({
+        filename: 'app.html',//生成的html模板的名称
+        template: path.join(__dirname, 'src/index.html')//生成的html的模板的
+    }),
      new MiniCssExtractPlugin({
        filename: "[name].[chunkhash:8].css",
        chunkFilename: "[id].css"

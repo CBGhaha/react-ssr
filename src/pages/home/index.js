@@ -27,14 +27,14 @@ export default class Home extends Component{
   render(){
     return(
       <div>
-      <p>一个关于react上下文context的例子</p>
-      <Provider value='red'>
-        <Consumer>
-          {theme => (<div style={{color:theme}}>child</div>)}
-        </Consumer>
+        <p style={{marginBottom:20}}>一个关于react上下文context的例子</p>
+        <Provider value='red'>
+          <Consumer>
+            {theme => (<div style={{color:theme}}>child</div>)}
+          </Consumer>
+          <Child1/>
+        </Provider>
         <Child1/>
-      </Provider>
-      <Child1/>
       </div>
     )
   }

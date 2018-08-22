@@ -10,10 +10,10 @@ const fs=require('fs');
 const path=require('path');
 const babelConfig=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../../.babelrc')));
 babelConfig.plugins=babelConfig.plugins.concat(['syntax-dynamic-import',"dynamic-import-node"]);
-console.log(babelConfig);
+
 require('babel-register')(babelConfig);
 const  appHtml =require('./appHtml.js').default;
 app.use(express.static(path.resolve(__dirname,'../../dist')));
-app.use(appHtml)
-
+app.use(appHtml);
+console.log('open http://localhost:8080');
 app.listen('8080')

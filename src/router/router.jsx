@@ -15,8 +15,8 @@ const links=[
   {routerName:'Page1',url:'/page1'},
   {routerName:'Page2',url:'/page2'}
 ];
-console.log(process.env.NODE_ENV)
-//
+
+
 const LayoutComponent=({component:Component,...reset})=>(
     <Route {...reset} render={()=>(<RootLayout><Component/></RootLayout>)} />
 )
@@ -27,7 +27,7 @@ const LayoutComponent=({component:Component,...reset})=>(
         <div>
           <ul>
               {links.map((item,index)=>
-                <li key={index.toString()}>
+                <li style={{display:'inline-block',padding:20}} key={index.toString()}>
                   <Link to={item.url}>{item.routerName}</Link>
                 </li>
               )}

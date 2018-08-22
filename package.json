@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --colors",
     "build": "webpack --config webpack.config.js --progress --colors",
-    "ssr": "cross-env NODE_ENV=ssr nodemon ./src/server/index.js --watch config --watch server"
+    "server": "cross-env NODE_ENV=ssr nodemon ./src/server/index.js --watch config --watch server",
+    "ssr": "npm run build&&npm run server"
+
   },
   "author": "",
   "license": "ISC",

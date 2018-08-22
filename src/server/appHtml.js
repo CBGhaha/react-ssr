@@ -17,7 +17,6 @@ export default async function appHtml(req,res,next) {
     //获取路由下需要预先加载的数据 实际开发中可以放在一个配置文件中
     await Promise.all([ajaxAction('homeAjax',{level:'country'})(store.dispatch,store.getState)] ).then(()=>{
     }).catch((err)=>{});
-
     res.end(html.toString().replace("<div id='appContent'></div>",`<script>window.__DATA__ =${JSON.stringify(store.getState())}</script><div id='appContent'>${htmlString}</div>`))
   }else{
     res.end('aa')

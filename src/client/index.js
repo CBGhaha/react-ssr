@@ -12,7 +12,8 @@ let history=createHistory()
 //比如console.log(a)这个语句 在启动后执行一次后 当我修改a.js后重新打包 但这句语句是不会重新执行的 除非刷新
 //所以热模块替换（HMR）使用module.hot.accept监听变化 并触发变化后执行的操作（重新）
 //AppContainer 是react基于webpack的HMR的loader 它使得热加载后一些之前编译的旧内容(某个已经渲染的dom，某个dom上的旧事件)获得更新
-let initState=JSON.parse(window.__DATA__||'{}');
+let initState=window.__DATA__||{};
+console.log(initState)
 let store=initStore(initState);
 ReactDOM.render(
   <AppContainer>
