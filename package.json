@@ -6,10 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --colors",
-    "build": "webpack --config webpack.config.js --progress --colors",
     "server": "cross-env NODE_ENV=ssr nodemon ./src/server/index.js --watch config --watch server",
+    "build": "webpack --config webpack.config.js --progress --colors",
     "ssr": "npm run build&&npm run server"
-
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +30,7 @@
     "eslint-plugin-react": "^7.10.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "ignore-loader": "^0.1.2",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.4.1",
@@ -51,7 +51,8 @@
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.6",
     "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "babel-register": "^6.26.0",
