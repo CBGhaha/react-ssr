@@ -27,7 +27,7 @@ export default class Home extends Component{
 
   componentWillMount(){
 
-    (!this.props.homeAjax.data)&&this.props.ajaxAction('homeAjax',{level:'country'},(res)=>{console.log(res)});
+    (!this.props.homeAjax.data)&&this.props.ajaxAction('homeAjax',{grade:'五年级'},(res)=>{console.log(res)});
     this.setState({
       dataSources:this.props.homeAjax.data?'server':'client'
     })
@@ -47,7 +47,7 @@ export default class Home extends Component{
         <div style={{marginTop:200}}>
             <div>
               <p style={{marginBottom:20}}>数据获取：数据来自于{dataSources==='server'?'服务端预取':'客户端获取'}</p>
-              {this.props.homeAjax.data&&Object.values(this.props.homeAjax.data.data.userNewsJson).map((item,index)=><img style={{width:150,height:80,padding:10}} key={index.toString()} src={item.coverImage}/>)}
+              {this.props.homeAjax.data&&Object.values(this.props.homeAjax.data.data.list).map((item,index)=><img style={{width:150,height:80,padding:10}} key={index.toString()} src={item.coverImage}/>)}
 
             </div>
 

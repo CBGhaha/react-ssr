@@ -1,5 +1,5 @@
 export const homeAjax={
-   url:"http://www.2-class.com/api/homePage/list",
+   url:"https://2-class.com/api/course/getCourseList",
    method:'GET'
 }
 export const test={
