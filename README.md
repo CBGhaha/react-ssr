@@ -5,11 +5,14 @@ this is a demo of react-ssr
 npm run dev
 --listen localhost:3001
 
-# client-production
-npm run build
+# build client
+npm run build:client
 
-# server
-npm run server (you should run 'client-production' first)
+# build server
+npm run build:server
+
+# run server
+npm run server (you should run build:client and build:server first)
 
 # run ssr
 npm run ssr (run build&server)
