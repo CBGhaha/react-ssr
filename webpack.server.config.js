@@ -6,8 +6,6 @@ const config={
   //配置模块的读取和解析规则
   entry:{
       main:path.resolve(__dirname,'src/server/appHtml.js'),
-    //代码分离---提取公共库
-    // vendor:['react','react-router-dom','react-dom',],
   },
   mode:'production',
   module:{
@@ -28,7 +26,7 @@ const config={
         exclude:path.resolve(__dirname,'node_module')
       },
       {
-        test: /\.(png|jsp|gif)/,
+        test: /\.(png|jpg|gif|jpeg)/,
         use: ['ignore-loader'],
       },
 
